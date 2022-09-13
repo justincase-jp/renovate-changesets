@@ -1,0 +1,7 @@
+{
+  "extends": "@jict/typescript-configs/node-library.json",
+  "compilerOptions": {
+    "target": "ESNext",
+    "outDir": "dist"
+  }
+}
