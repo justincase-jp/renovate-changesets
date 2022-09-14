@@ -136,6 +136,8 @@ async function main() {
     }
   }
 
+  core.debug(`changes: ${JSON.stringify(changes)}`);
+
   const changesetBase = path.resolve(process.cwd(), '.changeset');
   await mkdirp(changesetBase).catch(() => null);
 
