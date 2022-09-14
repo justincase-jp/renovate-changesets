@@ -134965,7 +134965,7 @@ const gitFetch = async () => {
   await exec_2("git", ["fetch"]);
 };
 const gitPush = async () => {
-  await exec_2("git", ["push"]);
+  await exec_2("git", ["push", "-u", "origin", "HEAD"]);
 };
 const commitAll = async (message) => {
   await exec_2("git", ["add", "."]);

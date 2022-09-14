@@ -9,7 +9,7 @@ export const gitFetch = async () => {
 };
 
 export const gitPush = async () => {
-  await exec('git', ['push']);
+  await exec('git', ['push', '-u', 'origin', 'HEAD']);
 };
 
 export const commitAll = async (message: string) => {
