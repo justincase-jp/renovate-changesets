@@ -9,7 +9,14 @@ import { Operation, diff } from 'json-diff-ts';
 import sanitize from 'sanitize-filename';
 import { coerce as coerceVersion } from 'semver';
 
-import { checkIfClean, commitAll, gitPush, readFileFromSha } from './git';
+import {
+  checkIfClean,
+  commitAll,
+  gitFetch,
+  gitPush,
+  readFileFromSha,
+  switchToMaybeExistingBranch,
+} from './git';
 import { setupGitCredentials, setupGitUser } from './utils';
 
 import type { IChange } from 'json-diff-ts';
@@ -142,6 +149,10 @@ async function main() {
 
   // eslint-disable-next-line n/no-unsupported-features/es-builtins
   core.debug(`changes: ${JSON.stringify(Object.fromEntries(changes))}`);
+
+  const branch = github.context.payload.pull_request!.head.ref;
+  await gitFetch();
+  await switchToMaybeExistingBranch(branch);
 
   const changesetBase = path.resolve(process.cwd(), '.changeset');
   await mkdirp(changesetBase).catch(() => null);

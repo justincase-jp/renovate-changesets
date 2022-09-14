@@ -134961,6 +134961,9 @@ const setupGitUser = async () => {
   ]);
 };
 
+const gitFetch = async () => {
+  await exec_2("git", ["fetch"]);
+};
 const gitPush = async (branch, { force } = {}) => {
   await exec_2(
     "git",
@@ -134986,6 +134989,15 @@ const readFileFromSha = async (baseRef, path) => {
     `${baseRef}:${path}`
   ]);
   return JSON.parse(stdout);
+};
+const switchToMaybeExistingBranch = async (branch) => {
+  const { stderr } = await execWithOutput("git", ["checkout", branch], {
+    ignoreReturnCode: true
+  });
+  const isCreatingBranch = !stderr.toString().includes(`Switched to a new branch '${branch}'`);
+  if (isCreatingBranch) {
+    await exec_2("git", ["checkout", "-b", branch]);
+  }
 };
 
 function textify(diff2, location) {
@@ -135082,6 +135094,9 @@ async function main() {
     }
   }
   coreExports.debug(`changes: ${JSON.stringify(Object.fromEntries(changes))}`);
+  const branch = context.payload.pull_request.head.ref;
+  await gitFetch();
+  await switchToMaybeExistingBranch(branch);
   const changesetBase = path$A.resolve(process.cwd(), ".changeset");
   await lib$1.mkdirp(changesetBase).catch(() => null);
   for (const [key, value] of changes) {

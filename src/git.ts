@@ -4,6 +4,10 @@ import { execWithOutput } from './utils';
 
 import type { PackageJSON } from '@changesets/types';
 
+export const gitFetch = async () => {
+  await exec('git', ['fetch']);
+};
+
 export const gitPush = async (
   branch?: string,
   { force }: { force?: boolean } = {},
@@ -39,4 +43,16 @@ export const readFileFromSha = async (
   ]);
 
   return JSON.parse(stdout);
+};
+
+export const switchToMaybeExistingBranch = async (branch: string) => {
+  const { stderr } = await execWithOutput('git', ['checkout', branch], {
+    ignoreReturnCode: true,
+  });
+  const isCreatingBranch = !stderr
+    .toString()
+    .includes(`Switched to a new branch '${branch}'`);
+  if (isCreatingBranch) {
+    await exec('git', ['checkout', '-b', branch]);
+  }
 };
