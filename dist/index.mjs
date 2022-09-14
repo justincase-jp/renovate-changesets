@@ -135072,7 +135072,7 @@ async function main() {
       );
     }
   }
-  coreExports.debug(`changes: ${JSON.stringify(changes)}`);
+  coreExports.debug(`changes: ${JSON.stringify(Object.fromEntries(changes))}`);
   const changesetBase = path$A.resolve(process.cwd(), ".changeset");
   await lib$1.mkdirp(changesetBase).catch(() => null);
   for (const [key, value] of changes) {

@@ -136,7 +136,8 @@ async function main() {
     }
   }
 
-  core.debug(`changes: ${JSON.stringify(changes)}`);
+  // eslint-disable-next-line n/no-unsupported-features/es-builtins
+  core.debug(`changes: ${JSON.stringify(Object.fromEntries(changes))}`);
 
   const changesetBase = path.resolve(process.cwd(), '.changeset');
   await mkdirp(changesetBase).catch(() => null);
