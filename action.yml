@@ -2,7 +2,7 @@ name: Renovate Changesets
 description: Auto generate changesets for renovate updates.
 runs:
   using: 'node16'
-  main: 'dist/index.js'
+  main: 'dist/index.mjs'
 branding:
   icon: 'package'
   color: 'blue'
