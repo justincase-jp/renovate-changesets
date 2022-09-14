@@ -14,6 +14,7 @@
   "scripts": {
     "build": "unbuild",
     "lint": "eslint .",
+    "test": "vitest",
     "changeset": "changeset"
   },
   "repository": {
@@ -48,7 +49,8 @@
     "sanitize-filename": "^1.6.3",
     "semver": "^7.3.7",
     "typescript": "^4.8.3",
-    "unbuild": "^0.8.11"
+    "unbuild": "^0.8.11",
+    "vitest": "^0.23.2"
   },
   "prettier": "@jict/prettier-config",
   "unbuild": {
