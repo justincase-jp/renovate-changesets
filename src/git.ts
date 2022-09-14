@@ -29,7 +29,7 @@ export const checkIfClean = async (): Promise<boolean> => {
   return !stdout.length;
 };
 
-export const readPackageJsonFromSha = async (
+export const readFileFromSha = async (
   baseRef: string,
   path: string,
 ): Promise<PackageJSON> => {

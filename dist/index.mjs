@@ -134980,7 +134980,7 @@ const checkIfClean = async () => {
   const { stdout } = await execWithOutput("git", ["status", "--porcelain"]);
   return !stdout.length;
 };
-const readPackageJsonFromSha = async (baseRef, path) => {
+const readFileFromSha = async (baseRef, path) => {
   const { stdout } = await execWithOutput("git", [
     "show",
     `${baseRef}:${path}`
@@ -135045,10 +135045,7 @@ async function main() {
   );
   const changes = /* @__PURE__ */ new Map();
   for (const pkg of relevantPackages) {
-    const oldPackageFile = await readPackageJsonFromSha(
-      baseSha,
-      pkg.relativePath
-    );
+    const oldPackageFile = await readFileFromSha(baseSha, pkg.relativePath);
     if (oldPackageFile) {
       if (!changes.has(pkg.packageJson.name)) {
         changes.set(pkg.packageJson.name, {

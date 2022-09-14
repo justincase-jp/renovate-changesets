@@ -9,12 +9,7 @@ import { Operation, diff } from 'json-diff-ts';
 import sanitize from 'sanitize-filename';
 import { coerce as coerceVersion } from 'semver';
 
-import {
-  checkIfClean,
-  commitAll,
-  gitPush,
-  readPackageJsonFromSha,
-} from './git';
+import { checkIfClean, commitAll, gitPush, readFileFromSha } from './git';
 import { setupGitCredentials, setupGitUser } from './utils';
 
 import type { IChange } from 'json-diff-ts';
@@ -105,10 +100,7 @@ async function main() {
   >();
 
   for (const pkg of relevantPackages) {
-    const oldPackageFile = await readPackageJsonFromSha(
-      baseSha,
-      pkg.relativePath,
-    );
+    const oldPackageFile = await readFileFromSha(baseSha, pkg.relativePath);
 
     if (oldPackageFile) {
       if (!changes.has(pkg.packageJson.name)) {
