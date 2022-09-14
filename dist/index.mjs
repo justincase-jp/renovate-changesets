@@ -135038,7 +135038,7 @@ async function main() {
     absolutePath: `${pkg.dir}/package.json`,
     relativePath: path$A.relative(process.cwd(), `${pkg.dir}/package.json`)
   }));
-  coreExports.debug(
+  coreExports.info(
     `found relevant packages to check:${relevantPackages.map(
       (pkg) => pkg.packageJson?.name || pkg.dir
     )}`
