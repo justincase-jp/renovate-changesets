@@ -134964,16 +134964,8 @@ const setupGitUser = async () => {
 const gitFetch = async () => {
   await exec_2("git", ["fetch"]);
 };
-const gitPush = async (branch, { force } = {}) => {
-  await exec_2(
-    "git",
-    [
-      "push",
-      "origin",
-      branch ? `HEAD:${branch}` : void 0,
-      force && "--force"
-    ].filter(Boolean)
-  );
+const gitPush = async () => {
+  await exec_2("git", ["push"]);
 };
 const commitAll = async (message) => {
   await exec_2("git", ["add", "."]);

@@ -8,19 +8,8 @@ export const gitFetch = async () => {
   await exec('git', ['fetch']);
 };
 
-export const gitPush = async (
-  branch?: string,
-  { force }: { force?: boolean } = {},
-) => {
-  await exec(
-    'git',
-    [
-      'push',
-      'origin',
-      branch ? `HEAD:${branch}` : undefined,
-      force && '--force',
-    ].filter<string>(Boolean as any),
-  );
+export const gitPush = async () => {
+  await exec('git', ['push']);
 };
 
 export const commitAll = async (message: string) => {
