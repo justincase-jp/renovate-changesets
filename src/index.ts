@@ -12,10 +12,8 @@ import { coerce as coerceVersion } from 'semver';
 import {
   checkIfClean,
   commitAll,
-  gitFetch,
   gitPush,
   readPackageJsonFromSha,
-  switchToMaybeExistingBranch,
 } from './git';
 import { setupGitCredentials, setupGitUser } from './utils';
 
@@ -134,10 +132,6 @@ async function main() {
       );
     }
   }
-
-  const branch = github.context.payload.pull_request!.head.ref;
-  await gitFetch();
-  await switchToMaybeExistingBranch(branch);
 
   const changesetBase = path.resolve(process.cwd(), '.changeset');
   await mkdirp(changesetBase).catch(() => null);

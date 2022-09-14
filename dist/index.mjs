@@ -134961,9 +134961,6 @@ const setupGitUser = async () => {
   ]);
 };
 
-const gitFetch = async () => {
-  await exec_2("git", ["fetch"]);
-};
 const gitPush = async (branch, { force } = {}) => {
   await exec_2(
     "git",
@@ -134974,9 +134971,6 @@ const gitPush = async (branch, { force } = {}) => {
       force && "--force"
     ].filter(Boolean)
   );
-};
-const switchToMaybeExistingBranch = async (branch) => {
-  await execWithOutput("git", ["checkout", "-t", `origin/${branch}`]);
 };
 const commitAll = async (message) => {
   await exec_2("git", ["add", "."]);
@@ -135076,9 +135070,6 @@ async function main() {
       );
     }
   }
-  const branch = context.payload.pull_request.head.ref;
-  await gitFetch();
-  await switchToMaybeExistingBranch(branch);
   const changesetBase = path$A.resolve(process.cwd(), ".changeset");
   await lib$1.mkdirp(changesetBase).catch(() => null);
   for (const [key, value] of changes) {
