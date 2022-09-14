@@ -13,7 +13,8 @@
   },
   "scripts": {
     "build": "unbuild",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "changeset": "changeset"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,8 @@
     "semver": "^7.3.7"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.4.6",
+    "@changesets/cli": "^2.24.4",
     "@jict/eslint-plugin": "^0.4.1",
     "@jict/prettier-config": "^0.0.2",
     "@jict/typescript-configs": "^0.1.0",
