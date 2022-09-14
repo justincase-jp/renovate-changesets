@@ -135056,6 +135056,8 @@ async function main() {
           peerDependencies: []
         });
       }
+      coreExports.debug(`oldPackageFile: ${JSON.stringify(oldPackageFile)}`);
+      coreExports.debug(`newPackageFile: ${JSON.stringify(pkg.packageJson)}`);
       changes.get(pkg.packageJson.name).dependencies = lib.diff(
         oldPackageFile.dependencies || {},
         pkg.packageJson.dependencies || {}

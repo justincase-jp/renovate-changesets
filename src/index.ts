@@ -118,6 +118,9 @@ async function main() {
         });
       }
 
+      core.debug(`oldPackageFile: ${JSON.stringify(oldPackageFile)}`);
+      core.debug(`newPackageFile: ${JSON.stringify(pkg.packageJson)}`);
+
       changes.get(pkg.packageJson.name)!.dependencies = diff(
         oldPackageFile.dependencies || {},
         pkg.packageJson.dependencies || {},
