@@ -135056,8 +135056,20 @@ async function main() {
           peerDependencies: []
         });
       }
-      coreExports.debug(`oldPackageFile: ${JSON.stringify(oldPackageFile)}`);
-      coreExports.debug(`newPackageFile: ${JSON.stringify(pkg.packageJson)}`);
+      coreExports.debug(
+        `package row: ${JSON.stringify({
+          old: oldPackageFile.dependencies || {},
+          new: pkg.packageJson.dependencies || {}
+        })}`
+      );
+      coreExports.debug(
+        `package diff: ${JSON.stringify(
+          lib.diff(
+            oldPackageFile.dependencies || {},
+            pkg.packageJson.dependencies || {}
+          )
+        )}`
+      );
       changes.get(pkg.packageJson.name).dependencies = lib.diff(
         oldPackageFile.dependencies || {},
         pkg.packageJson.dependencies || {}
@@ -135083,7 +135095,7 @@ async function main() {
       )
     ].map((t) => `- ${t}`);
     coreExports.debug(
-      `package update summary ${JSON.stringify({
+      `package update core.summary ${JSON.stringify({
         key,
         changes: changes2
       })}`

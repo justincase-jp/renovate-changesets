@@ -118,8 +118,20 @@ async function main() {
         });
       }
 
-      core.debug(`oldPackageFile: ${JSON.stringify(oldPackageFile)}`);
-      core.debug(`newPackageFile: ${JSON.stringify(pkg.packageJson)}`);
+      core.debug(
+        `package row: ${JSON.stringify({
+          old: oldPackageFile.dependencies || {},
+          new: pkg.packageJson.dependencies || {},
+        })}`,
+      );
+      core.debug(
+        `package diff: ${JSON.stringify(
+          diff(
+            oldPackageFile.dependencies || {},
+            pkg.packageJson.dependencies || {},
+          ),
+        )}`,
+      );
 
       changes.get(pkg.packageJson.name)!.dependencies = diff(
         oldPackageFile.dependencies || {},
@@ -151,7 +163,7 @@ async function main() {
     ].map((t) => `- ${t}`);
 
     core.debug(
-      `package update summary ${JSON.stringify({
+      `package update core.summary ${JSON.stringify({
         key,
         changes,
       })}`,
