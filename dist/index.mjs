@@ -135010,7 +135010,7 @@ function textify(diff2, location) {
   return "";
 }
 async function main() {
-  const githubToken = process.env.GITHUB_TOKEN;
+  const githubToken = coreExports.getInput("token") || process.env.GITHUB_TOKEN;
   if (!githubToken) {
     coreExports.setFailed("Please add the GITHUB_TOKEN to the changesets action");
     return;
