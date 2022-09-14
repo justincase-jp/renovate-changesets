@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 
 import * as core from '@actions/core';
 import * as github from '@actions/github';
