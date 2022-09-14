@@ -4,7 +4,7 @@ import { readFileFromSha } from './git';
 
 describe('git', () => {
   it('readFileFromSha', async () => {
-    const file = await readFileFromSha('main', 'package.json');
+    const file = await readFileFromSha('HEAD', 'package.json');
     expect(file.name).toMatchInlineSnapshot('"renovate-changesets"');
   });
 });
