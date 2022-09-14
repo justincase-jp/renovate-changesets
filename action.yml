@@ -1,5 +1,9 @@
 name: Renovate Changesets
 description: Auto generate changesets for renovate updates.
+inputs:
+  token:
+    description: 'The GitHub token to use for the commit.'
+    default: ${{ github.token }}
 runs:
   using: 'node16'
   main: 'dist/index.mjs'

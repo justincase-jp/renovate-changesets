@@ -44,7 +44,7 @@ function textify(diff: IChange, location: string) {
 }
 
 async function main() {
-  const githubToken = process.env.GITHUB_TOKEN;
+  const githubToken = core.getInput('token') || process.env.GITHUB_TOKEN;
 
   if (!githubToken) {
     core.setFailed('Please add the GITHUB_TOKEN to the changesets action');
