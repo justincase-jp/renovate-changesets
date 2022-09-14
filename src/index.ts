@@ -9,12 +9,7 @@ import { Operation, diff } from 'json-diff-ts';
 import sanitize from 'sanitize-filename';
 import { coerce as coerceVersion } from 'semver';
 
-import {
-  checkIfClean,
-  commitAll,
-  gitPush,
-  readPackageJsonFromSha,
-} from './git';
+import { checkIfClean, commitAll, gitPush, readFileFromSha } from './git';
 import { setupGitCredentials, setupGitUser } from './utils';
 
 import type { IChange } from 'json-diff-ts';
@@ -90,7 +85,7 @@ async function main() {
       relativePath: path.relative(process.cwd(), `${pkg.dir}/package.json`),
     }));
 
-  core.debug(
+  core.info(
     `found relevant packages to check:${relevantPackages.map(
       (pkg) => pkg.packageJson?.name || pkg.dir,
     )}`,
@@ -105,10 +100,7 @@ async function main() {
   >();
 
   for (const pkg of relevantPackages) {
-    const oldPackageFile = await readPackageJsonFromSha(
-      baseSha,
-      pkg.relativePath,
-    );
+    const oldPackageFile = await readFileFromSha(baseSha, pkg.relativePath);
 
     if (oldPackageFile) {
       if (!changes.has(pkg.packageJson.name)) {
@@ -117,6 +109,21 @@ async function main() {
           peerDependencies: [],
         });
       }
+
+      core.debug(
+        `package row: ${JSON.stringify({
+          old: oldPackageFile.dependencies || {},
+          new: pkg.packageJson.dependencies || {},
+        })}`,
+      );
+      core.debug(
+        `package diff: ${JSON.stringify(
+          diff(
+            oldPackageFile.dependencies || {},
+            pkg.packageJson.dependencies || {},
+          ),
+        )}`,
+      );
 
       changes.get(pkg.packageJson.name)!.dependencies = diff(
         oldPackageFile.dependencies || {},
@@ -133,6 +140,9 @@ async function main() {
     }
   }
 
+  // eslint-disable-next-line n/no-unsupported-features/es-builtins
+  core.debug(`changes: ${JSON.stringify(Object.fromEntries(changes))}`);
+
   const changesetBase = path.resolve(process.cwd(), '.changeset');
   await mkdirp(changesetBase).catch(() => null);
 
@@ -145,7 +155,7 @@ async function main() {
     ].map((t) => `- ${t}`);
 
     core.debug(
-      `package update summary ${JSON.stringify({
+      `package update core.summary ${JSON.stringify({
         key,
         changes,
       })}`,

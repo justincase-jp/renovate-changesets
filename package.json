@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "author": "jict",
   "license": "MIT",
-  "packageManager": "pnpm@7.8.0",
+  "packageManager": "pnpm@7.11.0",
   "description": "Auto generate changesets for renovate updates",
   "exports": {
     ".": {
@@ -14,6 +14,7 @@
   "scripts": {
     "build": "unbuild",
     "lint": "eslint .",
+    "test": "vitest",
     "changeset": "changeset"
   },
   "repository": {
@@ -26,7 +27,7 @@
     "changesets"
   ],
   "devDependencies": {
-    "@actions/core": "^1.9.0",
+    "@actions/core": "^1.9.1",
     "@actions/exec": "^1.1.1",
     "@actions/github": "^5.0.3",
     "@changesets/changelog-github": "^0.4.6",
@@ -34,7 +35,7 @@
     "@changesets/config": "^2.1.1",
     "@changesets/types": "^5.1.0",
     "@jict/eslint-plugin": "^0.4.4",
-    "@jict/prettier-config": "^0.0.2",
+    "@jict/prettier-config": "^0.0.3",
     "@jict/typescript-configs": "^0.1.0",
     "@manypkg/get-packages": "^1.1.3",
     "@types/fs-extra": "^9.0.13",
@@ -47,8 +48,9 @@
     "prettier": "^2.7.1",
     "sanitize-filename": "^1.6.3",
     "semver": "^7.3.7",
-    "typescript": "^4.7.4",
-    "unbuild": "^0.8.11"
+    "typescript": "^4.8.3",
+    "unbuild": "^0.8.11",
+    "vitest": "^0.23.2"
   },
   "prettier": "@jict/prettier-config",
   "unbuild": {

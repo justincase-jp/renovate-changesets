@@ -134980,7 +134980,7 @@ const checkIfClean = async () => {
   const { stdout } = await execWithOutput("git", ["status", "--porcelain"]);
   return !stdout.length;
 };
-const readPackageJsonFromSha = async (baseRef, path) => {
+const readFileFromSha = async (baseRef, path) => {
   const { stdout } = await execWithOutput("git", [
     "show",
     `${baseRef}:${path}`
@@ -135038,17 +135038,14 @@ async function main() {
     absolutePath: `${pkg.dir}/package.json`,
     relativePath: path$A.relative(process.cwd(), `${pkg.dir}/package.json`)
   }));
-  coreExports.debug(
+  coreExports.info(
     `found relevant packages to check:${relevantPackages.map(
       (pkg) => pkg.packageJson?.name || pkg.dir
     )}`
   );
   const changes = /* @__PURE__ */ new Map();
   for (const pkg of relevantPackages) {
-    const oldPackageFile = await readPackageJsonFromSha(
-      baseSha,
-      pkg.relativePath
-    );
+    const oldPackageFile = await readFileFromSha(baseSha, pkg.relativePath);
     if (oldPackageFile) {
       if (!changes.has(pkg.packageJson.name)) {
         changes.set(pkg.packageJson.name, {
@@ -135056,6 +135053,20 @@ async function main() {
           peerDependencies: []
         });
       }
+      coreExports.debug(
+        `package row: ${JSON.stringify({
+          old: oldPackageFile.dependencies || {},
+          new: pkg.packageJson.dependencies || {}
+        })}`
+      );
+      coreExports.debug(
+        `package diff: ${JSON.stringify(
+          lib.diff(
+            oldPackageFile.dependencies || {},
+            pkg.packageJson.dependencies || {}
+          )
+        )}`
+      );
       changes.get(pkg.packageJson.name).dependencies = lib.diff(
         oldPackageFile.dependencies || {},
         pkg.packageJson.dependencies || {}
@@ -135070,6 +135081,7 @@ async function main() {
       );
     }
   }
+  coreExports.debug(`changes: ${JSON.stringify(Object.fromEntries(changes))}`);
   const changesetBase = path$A.resolve(process.cwd(), ".changeset");
   await lib$1.mkdirp(changesetBase).catch(() => null);
   for (const [key, value] of changes) {
@@ -135080,7 +135092,7 @@ async function main() {
       )
     ].map((t) => `- ${t}`);
     coreExports.debug(
-      `package update summary ${JSON.stringify({
+      `package update core.summary ${JSON.stringify({
         key,
         changes: changes2
       })}`
