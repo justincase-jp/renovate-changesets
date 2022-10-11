@@ -135020,6 +135020,11 @@ async function main() {
     );
     return;
   }
+  const prCreator = context.payload.pull_request?.user.login;
+  if (prCreator !== "renovate[bot]") {
+    coreExports.warning("Skip this action because it is not created by Renovate");
+    return;
+  }
   await setupGitUser();
   await setupGitCredentials(githubToken);
   const issueContext = context.issue;
