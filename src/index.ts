@@ -60,6 +60,13 @@ async function main() {
     return;
   }
 
+  const prCreator = github.context.payload.pull_request?.user.login;
+
+  if (prCreator !== 'renovate[bot]') {
+    core.warning('Skip this action because it is not created by Renovate');
+    return;
+  }
+
   await setupGitUser();
   await setupGitCredentials(githubToken);
 
