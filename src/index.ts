@@ -225,7 +225,7 @@ ${changeset.summary}
 
   if (!(await checkIfClean())) {
     await commitAll(
-      `chore(deps): updated changesets for modified dependencies`,
+      `chore(deps): updated changesets for modified dependencies [skip ci]`,
     );
     await gitPush();
   }
