@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "author": "jict",
   "license": "MIT",
-  "packageManager": "pnpm@7.14.1",
+  "packageManager": "pnpm@7.16.0",
   "description": "Auto generate changesets for renovate updates",
   "exports": {
     ".": {
@@ -31,7 +31,7 @@
     "@actions/exec": "^1.1.1",
     "@actions/github": "^5.1.1",
     "@changesets/changelog-github": "^0.4.7",
-    "@changesets/cli": "^2.25.1",
+    "@changesets/cli": "^2.25.2",
     "@changesets/config": "^2.2.0",
     "@changesets/types": "^5.2.0",
     "@jict/eslint-plugin": "^0.4.8",
@@ -39,7 +39,7 @@
     "@jict/typescript-configs": "^0.1.0",
     "@manypkg/get-packages": "^1.1.3",
     "@types/fs-extra": "^9.0.13",
-    "@types/node": "^18.11.8",
+    "@types/node": "^18.11.9",
     "@types/semver": "^7.3.13",
     "eslint": "^8.26.0",
     "fs-extra": "^10.1.0",
