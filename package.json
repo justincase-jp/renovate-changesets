@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "author": "jict",
   "license": "MIT",
-  "packageManager": "pnpm@7.21.0",
+  "packageManager": "pnpm@7.25.0",
   "description": "Auto generate changesets for renovate updates",
   "exports": {
     ".": {
@@ -45,7 +45,7 @@
     "fs-extra": "^10.1.0",
     "json-diff-ts": "^1.2.5",
     "lodash": "^4.17.21",
-    "prettier": "^2.8.1",
+    "prettier": "^2.8.3",
     "sanitize-filename": "^1.6.3",
     "semver": "^7.3.8",
     "typescript": "^4.9.4",
