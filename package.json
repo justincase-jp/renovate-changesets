@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "author": "jict",
   "license": "MIT",
-  "packageManager": "pnpm@7.26.2",
+  "packageManager": "pnpm@7.30.5",
   "description": "Auto generate changesets for renovate updates",
   "exports": {
     ".": {
