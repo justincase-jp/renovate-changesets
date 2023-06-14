@@ -41,7 +41,7 @@
     "@types/fs-extra": "^9.0.13",
     "@types/node": "^18.16.9",
     "@types/semver": "^7.5.0",
-    "eslint": "^8.40.0",
+    "eslint": "^8.42.0",
     "fs-extra": "^10.1.0",
     "json-diff-ts": "^1.2.5",
     "lodash": "^4.17.21",
