@@ -13,7 +13,7 @@ specifiers:
   '@jict/typescript-configs': ^0.1.0
   '@manypkg/get-packages': ^1.1.3
   '@types/fs-extra': ^9.0.13
-  '@types/node': ^18.16.18
+  '@types/node': ^18.16.19
   '@types/semver': ^7.5.0
   eslint: ^8.42.0
   fs-extra: ^10.1.0
@@ -21,7 +21,7 @@ specifiers:
   lodash: ^4.17.21
   prettier: ^2.8.8
   sanitize-filename: ^1.6.3
-  semver: ^7.5.3
+  semver: ^7.5.4
   typescript: ^4.9.5
   unbuild: ^0.9.4
   vitest: ^0.32.2
@@ -39,7 +39,7 @@ devDependencies:
   '@jict/typescript-configs': 0.1.0
   '@manypkg/get-packages': 1.1.3
   '@types/fs-extra': 9.0.13
-  '@types/node': 18.16.18
+  '@types/node': 18.16.19
   '@types/semver': 7.5.0
   eslint: 8.42.0
   fs-extra: 10.1.0
@@ -47,7 +47,7 @@ devDependencies:
   lodash: 4.17.21
   prettier: 2.8.8
   sanitize-filename: 1.6.3
-  semver: 7.5.3
+  semver: 7.5.4
   typescript: 4.9.5
   unbuild: 0.9.4
   vitest: 0.32.2
@@ -368,7 +368,7 @@ packages:
       outdent: 0.5.0
       prettier: 2.8.8
       resolve-from: 5.0.0
-      semver: 7.5.3
+      semver: 7.5.4
     dev: true
 
   /@changesets/assemble-release-plan/5.2.4:
@@ -379,7 +379,7 @@ packages:
       '@changesets/get-dependents-graph': 1.3.6
       '@changesets/types': 5.2.1
       '@manypkg/get-packages': 1.1.3
-      semver: 7.5.3
+      semver: 7.5.4
     dev: true
 
   /@changesets/changelog-git/0.1.14:
@@ -431,7 +431,7 @@ packages:
       p-limit: 2.3.0
       preferred-pm: 3.0.3
       resolve-from: 5.0.0
-      semver: 7.5.3
+      semver: 7.5.4
       spawndamnit: 2.0.0
       term-size: 2.2.1
       tty-table: 4.2.1
@@ -462,7 +462,7 @@ packages:
       '@manypkg/get-packages': 1.1.3
       chalk: 2.4.2
       fs-extra: 7.0.1
-      semver: 7.5.3
+      semver: 7.5.4
     dev: true
 
   /@changesets/get-github-info/0.5.2:
@@ -818,7 +818,7 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@graphql-eslint/eslint-plugin/3.19.1_3rlbaohipiitkckftiernlgyqy:
+  /@graphql-eslint/eslint-plugin/3.19.1_y5fng7wx3hux5vuo4xxdg4tbjq:
     resolution: {integrity: sha512-8hllEu0dFXDk9poJRN0gIqrGoBblMe1TpRJFx0We+ZKWNQgaxvQ0QGmJPDak+BZV5BcOAM7m/GH2XWDgVB2nQA==}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -831,7 +831,7 @@ packages:
       debug: 4.3.4
       fast-glob: 3.2.12
       graphql: 15.8.0
-      graphql-config: 4.5.0_sjb4xj5p52iljdrwceurxzkacy
+      graphql-config: 4.5.0_c63x4sw3ijaf36zps6w7uik24m
       graphql-depth-limit: 1.1.0_graphql@15.8.0
       lodash.lowercase: 4.3.0
       tslib: 2.5.3
@@ -906,7 +906,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@graphql-tools/executor-http/0.1.10_sjb4xj5p52iljdrwceurxzkacy:
+  /@graphql-tools/executor-http/0.1.10_c63x4sw3ijaf36zps6w7uik24m:
     resolution: {integrity: sha512-hnAfbKv0/lb9s31LhWzawQ5hghBfHS+gYWtqxME6Rl0Aufq9GltiiLBcl7OVVOnkLF0KhwgbYP1mB5VKmgTGpg==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
@@ -917,7 +917,7 @@ packages:
       dset: 3.1.2
       extract-files: 11.0.0
       graphql: 15.8.0
-      meros: 1.3.0_@types+node@18.16.18
+      meros: 1.3.0_@types+node@18.16.19
       tslib: 2.5.3
       value-or-promise: 1.0.12
     transitivePeerDependencies:
@@ -1040,7 +1040,7 @@ packages:
       value-or-promise: 1.0.12
     dev: true
 
-  /@graphql-tools/url-loader/7.17.18_sjb4xj5p52iljdrwceurxzkacy:
+  /@graphql-tools/url-loader/7.17.18_c63x4sw3ijaf36zps6w7uik24m:
     resolution: {integrity: sha512-ear0CiyTj04jCVAxi7TvgbnGDIN2HgqzXzwsfcqiVg9cvjT40NcMlZ2P1lZDgqMkZ9oyLTV8Bw6j+SyG6A+xPw==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
@@ -1048,7 +1048,7 @@ packages:
       '@ardatan/sync-fetch': 0.0.1
       '@graphql-tools/delegate': 9.0.35_graphql@15.8.0
       '@graphql-tools/executor-graphql-ws': 0.0.14_graphql@15.8.0
-      '@graphql-tools/executor-http': 0.1.10_sjb4xj5p52iljdrwceurxzkacy
+      '@graphql-tools/executor-http': 0.1.10_c63x4sw3ijaf36zps6w7uik24m
       '@graphql-tools/executor-legacy-ws': 0.0.11_graphql@15.8.0
       '@graphql-tools/utils': 9.2.1_graphql@15.8.0
       '@graphql-tools/wrap': 9.4.2_graphql@15.8.0
@@ -1125,8 +1125,8 @@ packages:
       '@babel/core': 7.22.5
       '@babel/eslint-parser': 7.22.5_x2nqc5cansj73pf43kd5o2aydq
       '@babel/eslint-plugin': 7.22.5_x7u2t4cidzecpur4r5mvlttcty
-      '@graphql-eslint/eslint-plugin': 3.19.1_3rlbaohipiitkckftiernlgyqy
-      '@types/node': 18.16.18
+      '@graphql-eslint/eslint-plugin': 3.19.1_y5fng7wx3hux5vuo4xxdg4tbjq
+      '@types/node': 18.16.19
       '@typescript-eslint/eslint-plugin': 5.59.11_khxwfo2nlv6qliptqsbqa3vjsm
       '@typescript-eslint/parser': 5.59.11_kigkzfftsmftz3xok324pyvzui
       eslint: 8.42.0
@@ -1486,7 +1486,7 @@ packages:
   /@types/fs-extra/9.0.13:
     resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
     dependencies:
-      '@types/node': 18.16.18
+      '@types/node': 18.16.19
     dev: true
 
   /@types/is-ci/3.0.0:
@@ -1511,8 +1511,8 @@ packages:
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
     dev: true
 
-  /@types/node/18.16.18:
-    resolution: {integrity: sha512-/aNaQZD0+iSBAGnvvN2Cx92HqE5sZCPZtx2TsK+4nvV23fFe09jVDvpArXr2j9DnYlzuU9WuoykDDc6wqvpNcw==}
+  /@types/node/18.16.19:
+    resolution: {integrity: sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -1530,7 +1530,7 @@ packages:
   /@types/ws/8.5.5:
     resolution: {integrity: sha512-lwhs8hktwxSjf9UaZ9tG5M03PGogvFaH8gUgLNbN9HKIg0dvv6q+gkSuJ8HN4/VbyxkuLzCjlN7GquQ0gUJfIg==}
     dependencies:
-      '@types/node': 18.16.18
+      '@types/node': 18.16.19
     dev: true
 
   /@typescript-eslint/eslint-plugin/5.59.11_khxwfo2nlv6qliptqsbqa3vjsm:
@@ -1554,7 +1554,7 @@ packages:
       grapheme-splitter: 1.0.4
       ignore: 5.2.4
       natural-compare-lite: 1.4.0
-      semver: 7.5.3
+      semver: 7.5.4
       tsutils: 3.21.0_typescript@4.9.5
       typescript: 4.9.5
     transitivePeerDependencies:
@@ -1628,7 +1628,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.5.3
+      semver: 7.5.4
       tsutils: 3.21.0_typescript@4.9.5
       typescript: 4.9.5
     transitivePeerDependencies:
@@ -1649,7 +1649,7 @@ packages:
       '@typescript-eslint/typescript-estree': 5.59.11_typescript@4.9.5
       eslint: 8.42.0
       eslint-scope: 5.1.1
-      semver: 7.5.3
+      semver: 7.5.4
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -1966,7 +1966,7 @@ packages:
   /builtins/5.0.1:
     resolution: {integrity: sha512-qwVpFEHNfhYJIzNRBvd2C1kyo6jz3ZSMPyyuR47OPdiKWlbYnZNyDWuyR175qDnAJLiCo5fBBqPb3RiXgWlkOQ==}
     dependencies:
-      semver: 7.5.3
+      semver: 7.5.4
     dev: true
 
   /bundle-name/3.0.0:
@@ -2127,7 +2127,7 @@ packages:
       js-string-escape: 1.0.1
       lodash: 4.17.21
       md5-hex: 3.0.1
-      semver: 7.5.3
+      semver: 7.5.4
       well-known-symbols: 2.0.0
     dev: true
 
@@ -3164,7 +3164,7 @@ packages:
       is-core-module: 2.12.1
       minimatch: 3.1.2
       resolve: 1.22.2
-      semver: 7.5.3
+      semver: 7.5.4
     dev: true
 
   /eslint-plugin-prettier/4.2.1_vnriwwub2rhvoyn4ckagrc4lpi:
@@ -3731,7 +3731,7 @@ packages:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
     dev: true
 
-  /graphql-config/4.5.0_sjb4xj5p52iljdrwceurxzkacy:
+  /graphql-config/4.5.0_c63x4sw3ijaf36zps6w7uik24m:
     resolution: {integrity: sha512-x6D0/cftpLUJ0Ch1e5sj1TZn6Wcxx4oMfmhaG9shM0DKajA9iR+j1z86GSTQ19fShbGvrSSvbIQsHku6aQ6BBw==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
@@ -3745,7 +3745,7 @@ packages:
       '@graphql-tools/json-file-loader': 7.4.18_graphql@15.8.0
       '@graphql-tools/load': 7.8.14_graphql@15.8.0
       '@graphql-tools/merge': 8.4.2_graphql@15.8.0
-      '@graphql-tools/url-loader': 7.17.18_sjb4xj5p52iljdrwceurxzkacy
+      '@graphql-tools/url-loader': 7.17.18_c63x4sw3ijaf36zps6w7uik24m
       '@graphql-tools/utils': 9.2.1_graphql@15.8.0
       cosmiconfig: 8.0.0
       graphql: 15.8.0
@@ -4208,7 +4208,7 @@ packages:
       acorn: 8.8.2
       eslint-visitor-keys: 3.4.1
       espree: 9.5.2
-      semver: 7.5.3
+      semver: 7.5.4
     dev: true
 
   /jsonc-parser/3.2.0:
@@ -4411,7 +4411,7 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /meros/1.3.0_@types+node@18.16.18:
+  /meros/1.3.0_@types+node@18.16.19:
     resolution: {integrity: sha512-2BNGOimxEz5hmjUG2FwoxCt5HN7BXdaWyFqEwxPTrJzVdABtrL4TiHTcsWSFAxPQ/tOnEaQEJh3qWq71QRMY+w==}
     engines: {node: '>=13'}
     peerDependencies:
@@ -4420,7 +4420,7 @@ packages:
       '@types/node':
         optional: true
     dependencies:
-      '@types/node': 18.16.18
+      '@types/node': 18.16.19
     dev: true
 
   /micromatch/4.0.5:
@@ -5139,8 +5139,8 @@ packages:
     hasBin: true
     dev: true
 
-  /semver/7.5.3:
-    resolution: {integrity: sha512-QBlUtyVk/5EeHbi7X0fw6liDZc7BBmEaSYn01fMU1OUYbf6GPsbTtd8WmnqbI20SeycoHSeiybkE/q1Q+qlThQ==}
+  /semver/7.5.4:
+    resolution: {integrity: sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -5685,7 +5685,7 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /vite-node/0.32.2_@types+node@18.16.18:
+  /vite-node/0.32.2_@types+node@18.16.19:
     resolution: {integrity: sha512-dTQ1DCLwl2aEseov7cfQ+kDMNJpM1ebpyMMMwWzBvLbis8Nla/6c9WQcqpPssTwS6Rp/+U6KwlIj8Eapw4bLdA==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -5695,7 +5695,7 @@ packages:
       mlly: 1.3.0
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.3.9_@types+node@18.16.18
+      vite: 4.3.9_@types+node@18.16.19
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -5706,7 +5706,7 @@ packages:
       - terser
     dev: true
 
-  /vite/4.3.9_@types+node@18.16.18:
+  /vite/4.3.9_@types+node@18.16.19:
     resolution: {integrity: sha512-qsTNZjO9NoJNW7KnOrgYwczm0WctJ8m/yqYAMAK9Lxt4SoySUfS5S8ia9K7JHpa3KEeMfyF8LoJ3c5NeBJy6pg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -5731,7 +5731,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 18.16.18
+      '@types/node': 18.16.19
       esbuild: 0.17.19
       postcss: 8.4.24
       rollup: 3.25.1
@@ -5772,7 +5772,7 @@ packages:
     dependencies:
       '@types/chai': 4.3.5
       '@types/chai-subset': 1.3.3
-      '@types/node': 18.16.18
+      '@types/node': 18.16.19
       '@vitest/expect': 0.32.2
       '@vitest/runner': 0.32.2
       '@vitest/snapshot': 0.32.2
@@ -5792,8 +5792,8 @@ packages:
       strip-literal: 1.0.1
       tinybench: 2.5.0
       tinypool: 0.5.0
-      vite: 4.3.9_@types+node@18.16.18
-      vite-node: 0.32.2_@types+node@18.16.18
+      vite: 4.3.9_@types+node@18.16.19
+      vite-node: 0.32.2_@types+node@18.16.19
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less
