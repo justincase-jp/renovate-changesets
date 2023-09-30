@@ -49,7 +49,7 @@
     "sanitize-filename": "^1.6.3",
     "semver": "^7.5.4",
     "typescript": "^4.9.5",
-    "unbuild": "^0.9.4",
+    "unbuild": "^2.0.0",
     "vitest": "^0.34.5"
   },
   "prettier": "@jict/prettier-config",
