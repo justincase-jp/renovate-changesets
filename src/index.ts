@@ -154,7 +154,6 @@ async function main() {
     }
   }
 
-  // eslint-disable-next-line n/no-unsupported-features/es-builtins
   core.debug(`changes: ${JSON.stringify(Object.fromEntries(changes))}`);
 
   const branch = github.context.payload.pull_request!.head.ref;
