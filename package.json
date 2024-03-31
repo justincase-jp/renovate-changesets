@@ -39,7 +39,7 @@
     "@jict/typescript-configs": "^0.1.0",
     "@manypkg/get-packages": "^2.2.0",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.11.20",
+    "@types/node": "^20.11.30",
     "@types/semver": "^7.5.8",
     "eslint": "^8.57.0",
     "fs-extra": "^11.2.0",
